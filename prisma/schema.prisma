@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-py"
+  interface = "asyncio"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model TodayTask {
+  id           Int      @id @default(autoincrement())
+  taskHeading  String
+  completedNote String  @default("")
+}
+
+model CompletedTask {
+  id           Int      @id @default(autoincrement())
+  taskHeading  String
+  completedNote String  @default("")
+}
+
+model IncompletedTask {
+  id           Int      @id @default(autoincrement())
+  taskHeading  String
+  completedNote String  @default("")
+}
